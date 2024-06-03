@@ -1,0 +1,29 @@
+<link rel="stylesheet" href="../public/style.css">
+<body class="bg-zinc-950">
+    <div id="hello" class="max-w-screen-lg bg-blue-950 mx-auto p-10 my-20 rounded-[30px]"></div>
+    
+    <script>
+        let i = 0;
+        helloDiv = document.getElementById("hello");
+        fetch('https://jsonplaceholder.typicode.com/todos/')
+            .then(response => response.json())
+            .then(
+                hello =>
+                {
+                    while (i < hello.length){
+                        
+                        let child = document.createElement("div");
+                        child.innerHTML = hello[i].id + " " + hello[i].title;
+                        if (hello[i].completed){
+                            child.style.color = 'Green';
+                        } else{
+                            child.style.color = 'Red';
+                        }
+                        helloDiv.appendChild(child);
+                        console.log(hello[i]);
+                        i++;
+                    }
+                }
+                )
+    </script>
+</body>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../public/style.css">
+</head>
+<body>
+    <div class="grid grid-cols-3 grid-rows-3 p-5 gap-5 bg-zinc-200 w-96">
+        <button class="box h-24 w-24 border-2 border-black"></button>
+        <button class="box h-24 w-24 border-2 border-black"></button>
+        <button class="box h-24 w-24 border-2 border-black"></button>
+        <button class="box h-24 w-24 border-2 border-black"></button>
+        <button class="box h-24 w-24 border-2 border-black"></button>
+        <button class="box h-24 w-24 border-2 border-black"></button>
+        <button class="box h-24 w-24 border-2 border-black"></button>
+        <button class="box h-24 w-24 border-2 border-black"></button>
+        <button class="box h-24 w-24 border-2 border-black"></button>
+    </div>
+    
+    <script>
+        const boxes = document.querySelectorAll('.box');
+
+        boxes.forEach((box, index) => {
+            box.addEventListener('click', () => {
+                if (index % 2 === 0) {
+                    box.classList.toggle('bg-green-400');
+                } else {
+                    box.classList.toggle('bg-yellow-400');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<link rel="stylesheet" href="../public/style.css">
+
+<div id="container" class="bg-black">
+    <div id="dogs" class="grid grid-cols-4 gap-8 p-8"></div>
+</div>
+
+<!-- <script>
+    const container = document.getElementById('container');
+    const dogs = document.getElementById('dogs');
+    let i = 0;
+    fetch ("https://dog.ceo/api/breed/hound/images")
+        .then(response => response.json())
+        .then(data => data.message)
+        .then(detail => {
+            while (i < detail.length) {
+            let dog = document.createElement('img');
+            dog.classList.add('w-full','h-96','object-cover','hover:scale-110','active:scale-90','duration-500','rounded-3xl');
+            dog.src = detail[i];
+            dogs.appendChild(dog);
+            container.appendChild(dogs);
+            console.log(detail);
+            i++;
+            }
+        })
+</script> -->
+
+<script>
+    const container = document.getElementById('container');
+    const dogs = document.getElementById('dogs');
+
+    async function getDogs() {     
+        let response = await fetch ("https://dog.ceo/api/breed/hound/images");
+        let data = await response.json();
+        let details = data.message;
+        console.log(details);
+        details.forEach(detail => {
+            let dog = document.createElement('img');
+            dog.classList.add('w-full','h-96','object-cover','hover:scale-110','active:scale-90','duration-500','rounded-3xl');
+            dog.src = detail;
+            dogs.appendChild(dog);
+            // container.appendChild(dogs);
+            console.log(detail);
+        })
+    }
+
+    getDogs();
+</script>

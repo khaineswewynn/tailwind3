@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../public/style.css">
+</head>
+<body>
+    <div id="container" class="flex items-center justify-center h-screen duration-500 overflow-hidden">
+        <button id="event" class="h-20 w-20 bg-blue-500 font-semibold text-white rounded-full duration-[500ms] ease-in"></button>
+    </div>
+    
+    <script src="jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#event').click(function(){
+                // $('#event').html('Hello World!')
+                $('#event').toggleClass('scale-[30]')
+                $('#container').toggleClass('bg-yellow-300')
+                console.log('Hello World!')
+            })
+        })
+    </script>
+</body>
+</html>
